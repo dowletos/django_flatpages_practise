@@ -1,0 +1,15 @@
+
+{% extends 'flatpages/main.html' %}
+{% block title %}
+{{ flatpage.title }}
+{% endblock title%}
+{% block content %}
+<h1>{{flatpage.title}}</h1>
+ {% if user.is_authenticated %}
+      <font class="lead"><font size="6">Вы авторизованы как:</font><font size="6" color="green" face="Tahoma"><i>  {{ request.user }}</h1>
+ {% else %}
+
+    <font class="lead"><font size="6" color="red" face="Tahoma">Доступ к странице запрещек, пожалуйста <a href="/admin">авторизуйтесь</a></font></h1>
+  {% endif %}
+{% endblock content %}
+
